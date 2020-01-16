@@ -1,0 +1,36 @@
+Guia de uso del GridLayout
+
+Es una forma de maquetar webs mediante una cuadricula, en la que
+los objetos se disponen en varios cuadros, para dar relaciones de tamaño.
+
+https://www.campusmvp.es/recursos/post/como-maquetar-html-con-el-sistema-grid-de-css.aspx
+
+grid-template-rows: auto auto auto auto;
+Disposicion de las filas, ya que no hay un tamaño de pagina verticalmente, 
+se asigna tamaño automaticamente segun los objetos que haya en los contenedores.
+
+grid-template-columns: 2fr 1fr;
+Horizontalmente si hay un tamaño, en este caso son fracciones de la pantalla, 
+entre mas fraciones tenga, se es mas grande el espacio de la columna
+
+grid-template-areas:
+    	"imagen loginCliente"
+    	"imagen loginCliente"
+    	"imagen loginUsuario"
+    	"redes  loginUsuario"
+Aqui practicamente se dibujan los cuadros que usara cada objeto, si se quiere dejar
+vacio se usa un punto en su lugar, solo se pueden figuras rectangulares.
+
+.general .imagen {
+    grid-area: imagen;
+}
+.general .loginCliente {
+    grid-area: loginCliente;
+}
+.general .loginUsuario {
+    grid-area: loginUsuario;
+}
+.general .redes {
+    grid-area: redes;
+Cada objeto heredado del div general debe ser asignado a un div en el html que 
+este dentro del div general, para que este tome las caracteristicas del layout.
